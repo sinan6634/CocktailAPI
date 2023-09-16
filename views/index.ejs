@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>API Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Junge&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Cocktail Viewer!</h1>
+        <div class="random-button">
+            <form method="get">
+                <input type="submit" value="Get random drink!" formaction="/">
+            </form>            
+        </div>
+    </div>
+    <div class="drink">
+        <div class="drink-content">
+            <h2><%= content.strDrink %></h2>
+            <h3>Ingredients: </h3>
+            <ul>
+                <% for( let index = 0; index < ingredients.length; index++ ) { %>
+                    <li>
+                        <%= ingredientsQuantity[index] + " " + ingredients[index] %>
+                    </li>
+                <% } %>
+            </ul>
+            <p><%= content.strInstructions %></p>
+        </div>
+        <div class="drink-image">
+            <img src=<%= content.strDrinkThumb %> alt=<%= content.strDrink %> width="500">
+        </div>
+    </div>
+
+</body>
+</html>
